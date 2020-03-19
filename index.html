@@ -1,599 +1,473 @@
-<!DOCTYPE HTML>
-<html class="no-js">
-
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-CN" id="bgimg">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <meta name="renderer" content="webkit">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="icon" href="https://www.fulitu.cc/usr/themes/photograph/favicon.png">
-    <link rel="apple-touch-icon" href="https://www.fulitu.cc/usr/themes/photograph/favicon.png">
-    <title>第1套</title>
-    <!-- 使用url函数转换相关路径 -->
-    <link rel="stylesheet" type="text/css" href="../01/usr/themes/photograph/bootstrap3/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../01/usr/themes/photograph/fancybox3/jquery.fancybox.min.css" />
-    <link rel="stylesheet" type="text/css" href="../01/usr/themes/photograph/style.css" />
-    <style type="text/css">
-        .item-title {
-            opacity: 0;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="baidu_union_verify" content="84a16d6239c2064e1bbeb4808518e86b">
+<title>个人主页</title>
 
-        .item-link-text {
-            border-bottom: solid 2px white;
-        }
+<link rel="icon" href="zhuye/dir/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="zhuye/css/buttons.css">
+<link rel="stylesheet" type="text/css" href="zhuye/css/showcase.css">
 
-        .item {
-            height: 34.5vw;
-        }
+<meta name="referrer" content="no-referrer" />
+<script type="text/javascript">
 
-        @media screen and (max-width: 1199px) {
-            .item {
-                height: 48vw;
-            }
-        }
+var omitformtags=["input", "textarea", "select"]
 
-        @media screen and (max-width: 991px) {
-            .item {
-                height: 67.5vw;
-            }
-        }
+omitformtags=omitformtags.join("|")
 
-        @media screen and (max-width: 767px) {
-            .item {
-                height: 142.5vw;
-            }
-        }
+function disableselect(e){ 
+if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1) 
+return false 
+}
 
-        #side-button {
-            opacity: .7;
-        }
+function reEnable(){ 
+return true 
+}
 
-        #side-button li {
-            border-radius: 3px;
-        }
+if (typeof document.onselectstart!="undefined") 
+document.onselectstart=new Function ("return false") 
+else{ 
+document.onmousedown=disableselect 
+document.onmouseup=reEnable 
+} 
+</script>
 
-        /** diyCSS Start **/
+<script> 
+function stop(){ 
+return false; 
+} 
+document.oncontextmenu=stop; 
 
-        .post-content p {
-            text-indent: 2em;
-        }
+	function click(e) {
+		if (document.layers) {
+			if (e.which == 3) {
+				oncontextmenu='return false';
+			}
+		}
+	}
+	if (document.layers) {
+		document.captureEvents(Event.MOUSEDOWN);
+	}
+	document.onmousedown=click;
+	document.oncontextmenu = new Function("return false;")
+	document.onkeydown =document.onkeyup = document.onkeypress=function(){ 
+		if(window.event.keyCode == 123) { 
+			window.event.returnValue=false;
+			return(false); 
+		} 
+	}
+</script>
 
-        .post-content p img {
-            margin-left: -2em;
-        }
+<script type="text/javascript">
+	function change(){
+		var bodyBgs = [];
+		bodyBgs[0] = "http://img.netbian.com/file/2019/0808/ea41cb48c796ffd3020514994fc3e839.jpg";
+		bodyBgs[1] = "http://img.netbian.com/file/2019/0808/ea41cb48c796ffd3020514994fc3e839.jpg";
+		bodyBgs[2] = "http://img.netbian.com/file/2019/0808/ea41cb48c796ffd3020514994fc3e839.jpg";
+		bodyBgs[3] = "http://img.netbian.com/file/2019/0808/2bedaa2e638faded4fbec176aea8c223.jpg";
+		bodyBgs[4] = "http://img.netbian.com/file/2019/0808/2bedaa2e638faded4fbec176aea8c223.jpg";
+		bodyBgs[5] = "http://img.netbian.com/file/2019/0808/2bedaa2e638faded4fbec176aea8c223.jpg";
+		bodyBgs[6] = "http://img.netbian.com/file/2019/0125/01a2990f9e6125fa93b01441aab2cc2e.jpg";
+		bodyBgs[7] = "http://img.netbian.com/file/2019/0125/01a2990f9e6125fa93b01441aab2cc2e.jpg";
+		bodyBgs[8] = "http://img.netbian.com/file/2018/1214/3fd293c8825cab753516ae3f8b6b6660.jpg";
+		bodyBgs[9] = "http://img.netbian.com/file/2018/1214/3fd293c8825cab753516ae3f8b6b6660.jpg";
+		bodyBgs[10] = "http://img.netbian.com/file/2018/1214/3fd293c8825cab753516ae3f8b6b6660.jpg";
+//注意 bodyBgs[50] 50是当前序号, 按照顺序添加或删除即可, 但是序号必须是连续的
 
-        .ads {
-            width: 100%
-        }
+		//bodyBgs[] = "";
 
-        .ad {
-            padding: 5px;
-        }
+		var randomBgIndex = Math.round( Math.random() * 10 );//这里的10是随机取值范围, 取最后一个 bodyBgs[*] 的值即可
+		//document.write('<style>html{background-image:url(' + bodyBgs[randomBgIndex] + ')}</style>');
+		var img1= document.getElementById('bgimg');
+		img1.style.backgroundImage='url(' + bodyBgs[randomBgIndex] + ')';
+	        window.setTimeout(function(){change()},10000);//图片切换时间 1000=1s
+	}
+	change();
+</script>
+<style>
+/* basic styles for black background and crosshair cursor */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box
+}
 
-        #cTMail-Wrap table tr td,
-        table tr th {
-            border: none;
-        }
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+	vertical-align: baseline;
+}
 
-        #cTMail-Wrap table tr:nth-child(2n) {
-            background-color: #fff;
-        }
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block
+}
 
-        #adImg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2048;
-        }
+blockquote,q {
+	quotes: none
+}
 
-        #adImg img {
-            border-radius: 5px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-        }
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+	content: none
+}
 
-        /** diyCSS End **/
-    </style>
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-    <!-- 通过自有函数输出HTML头部信息 -->
-    
-    <script type="text/javascript">
-        (function() {
-            window.TypechoComment = {
-                dom: function(id) {
-                    return document.getElementById(id);
-                },
+input,textarea {
+	margin: 0;
+	padding: 0
+}
 
-                create: function(tag, attr) {
-                    var el = document.createElement(tag);
+ol,ul {
+	list-style: none
+}
 
-                    for (var key in attr) {
-                        el.setAttribute(key, attr[key]);
-                    }
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
 
-                    return el;
-                },
+caption,th {
+	text-align: left
+}
 
-                reply: function(cid, coid) {
-                    var comment = this.dom(cid),
-                        parent = comment.parentNode,
-                        response = this.dom('respond-post-348'),
-                        input = this.dom('comment-parent'),
-                        form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
-                        textarea = response.getElementsByTagName('textarea')[0];
+a:focus {
+	outline: 0
+}
 
-                    if (null == input) {
-                        input = this.create('input', {
-                            'type': 'hidden',
-                            'name': 'parent',
-                            'id': 'comment-parent'
-                        });
+html {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-family: Microsoft YaHei,sans-serif;
+	z-index: 1;
+	line-height: 1.5;
+	background-color: #121925;
+	font-weight: 300;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	-webkit-transition: .5s linear;
+	-moz-transition: .5s linear;
+	-o-transition: .5s linear;
+	transition: .5s linear;
+	/*overflow:hidden*/
+}
 
-                        form.appendChild(input);
-                    }
+body{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-width: 300px;
+	z-index: 2;
+	cursor:url('./style/default.cur'), url(./style/default.cur), auto;
+}
+body:before {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(./style/mask.png) center 0 repeat;
+}
+a {
+	color: #858585;
+	text-decoration:none;
+	cursor: url('./style/hand.cur'), url(./style/hand.cur), auto;
+}
 
-                    input.setAttribute('value', coid);
+a:hover {
+	color: #00b3ba
+}
 
-                    if (null == this.dom('comment-form-place-holder')) {
-                        var holder = this.create('div', {
-                            'id': 'comment-form-place-holder'
-                        });
+b {
+	background-color: rgba(0,179,186,0.4)
+}
 
-                        response.parentNode.insertBefore(holder, response);
-                    }
+::selection {
+	background: #00b3ba
+}
 
-                    comment.appendChild(response);
-                    this.dom('cancel-comment-reply-link').style.display = '';
+::-moz-selection {
+	background: #00b3ba
+}
 
-                    if (null != textarea && 'text' == textarea.name) {
-                        textarea.focus();
-                    }
+.top_hr_style01 {
+	width: 70%;
+	margin: 5px auto;
+	border: 0;
+	border-bottom: 1px solid #fff
+}
 
-                    return false;
-                },
+.top_hr_style02 {
+	border: 0;
+	border-bottom: 1px dashed #858585
+}
 
-                cancelReply: function() {
-                    var response = this.dom('respond-post-348'),
-                        holder = this.dom('comment-form-place-holder'),
-                        input = this.dom('comment-parent');
+.slider {
+	width: 100%;
+	height: 150px;
+	-webkit-transition: .2s ease;
+	-moz-transition: .2s ease;
+	-o-transition: .2s ease;
+	transition: .2s ease;
+	background-image: url(./img/topBG.jpg);
+	background-color: #121925;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed
+}
 
-                    if (null != input) {
-                        input.parentNode.removeChild(input);
-                    }
+#top {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: auto;
+	z-index: 11
+}
 
-                    if (null == holder) {
-                        return true;
-                    }
+#top_img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(./img/topBG.jpg);
+	background-color: #121925;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	z-index: 11
+}
 
-                    this.dom('cancel-comment-reply-link').style.display = 'none';
-                    holder.parentNode.insertBefore(response, holder);
-                    return false;
-                }
-            };
-        })();
-    </script>
-    <script type="text/javascript">
-        (function() {
-            var event = document.addEventListener ? {
-                    add: 'addEventListener',
-                    triggers: ['scroll', 'mousemove', 'keyup', 'touchstart'],
-                    load: 'DOMContentLoaded'
-                } : {
-                    add: 'attachEvent',
-                    triggers: ['onfocus', 'onmousemove', 'onkeyup', 'ontouchstart'],
-                    load: 'onload'
-                },
-                added = false;
+#top_main {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 40px 0 10px 0
+}
 
-            document[event.add](event.load, function() {
-                var r = document.getElementById('respond-post-348'),
-                    input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = '_';
-                input.value = (function() {
-                    var _ZtFT0wL = //'NDC'
-                        'f' + //'D'
-                        'e1' + 'b' //'b'
-                        +
-                        'cee' //'W'
-                        + //'k'
-                        '014' + 'fb0' //'4'
-                        + //'7F'
-                        '7F' + 'n8' //'n8'
-                        + //'yT2'
-                        '2' + //'ZNR'
-                        '0e0' + 'ec9' //'xQh'
-                        + //'3'
-                        'faa' + //'O3G'
-                        '39c' + //'jtH'
-                        '19a' + 'u3' //'u3'
-                        +
-                        '79' //'VtQ'
-                        +
-                        'e2' //'A6e'
-                        ,
-                        _G4df7 = [
-                            [3, 4],
-                            [12, 14],
-                            [12, 14],
-                            [28, 30]
-                        ];
+#top_logo {
+	height: 30%;
+	min-height: 50px;
+	max-height: 244px;
+	display: block
+}
 
-                    for (var i = 0; i < _G4df7.length; i++) {
-                        _ZtFT0wL = _ZtFT0wL.substring(0, _G4df7[i][0]) + _ZtFT0wL.substring(_G4df7[i][1]);
-                    }
+#top_logo img {
+	-webkit-animation: A 15s linear 0s infinite;
+	animation: A 15s linear 0s infinite;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	height: 100%
+}
 
-                    return _ZtFT0wL;
-                })();
+@-webkit-keyframes A {
+	0% {
+		-webkit-transform: rotate(0deg)
+	}
 
-                if (null != r) {
-                    var forms = r.getElementsByTagName('form');
-                    if (forms.length > 0) {
-                        function append() {
-                            if (!added) {
-                                forms[0].appendChild(input);
-                                added = true;
-                            }
-                        }
+	100% {
+		-webkit-transform: rotate(360deg)
+	}
+}
 
-                        for (var i = 0; i < event.triggers.length; i++) {
-                            var trigger = event.triggers[i];
-                            document[event.add](trigger, append);
-                            window[event.add](trigger, append);
-                        }
-                    }
-                }
-            });
-        })();
-    </script>
+@keyframes A {
+	0% {
+		transform: rotate(0deg)
+	}
+
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
+#top_title {
+	text-align: center;
+	padding-top: 15px;
+	display: block;
+	height: 10%
+}
+
+#top_title img {
+	margin-right: auto;
+	margin-left: auto;
+	display: block
+}
+
+#top_title #top_title01 {
+	height: 83%;
+	max-height: 59px;
+	min-height: 30px
+}
+
+#top_title #top_title02 {
+	height: 9px
+}
+#top_title #top_title02:hover{
+	background:rgba(0,0,0,0.8);
+}
+#top_navlist {
+	display: block;
+	width: 30%;
+	height: 220px;
+	max-width: 220px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px
+}
+
+#top_navlist::after {
+	content: " ";
+	display: block;
+	width: 20%;
+	height: 150px
+}
+
+.top_nav {
+	background-image:url(./style/nav_bg.png);
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	max-height: 40px;
+	min-height: 10px;
+	margin-top: 15px;
+	text-decoration: none;
+	font-size: 90%;
+	vertical-align: middle central;
+	color: #fff;
+	letter-spacing: .5px;
+	text-align: center;
+	-webkit-transition: .2s linear;
+	-moz-transition: .2s linear;
+	-o-transition: .2s linear;
+	transition: .2s linear;
+	line-height: 180%
+}
+
+.top_nav:hover {
+	border-radius: 5px;
+	background: #fff
+}
+
+#top_footer {
+	padding: 4px 10px 4px 10px;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.9);
+	color: #858585;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 12;
+	-webkit-transition: .2s linear;
+	-moz-transition: .2s linear;
+	-o-transition: .2s linear;
+	transition: .2s linear
+}
+#top_footer:hover{
+	background-color: #FFF;
+	background-color: rgba(255,255,255,0.8);
+	color: #000;
+}
+#top_copyright {
+	display: block;
+	-webkit-transition: .2s linear;
+	-moz-transition: .2s linear;
+	-o-transition: .2s linear;
+	transition: .2s linear;
+	font-size: 10px;
+	letter-spacing: 1.5px;
+	text-align: center
+}
+
+@media screen and (max-width:500px) {
+	#top_footer {
+		padding: 1px
+	}
+
+	#top_copyright {
+		font-size: 8px;
+		letter-spacing: 0;
+		text-align: center
+	}
+}
+.tooltips{
+-webkit-animation: A 3s linear 0s infinite;
+animation: A 3s linear 0s infinite;
+width:12px;
+height:12px;
+top:10px;
+left:10px;
+background: url(./style/snow0.gif);
+font-size: 10px;
+position:absolute; /*这个是关键*/
+z-index:102;
+}
+.tooltips:hover{
+-webkit-animation: none;
+animation: none;
+z-index:103;
+background:none; /*没有这个在IE中不可用*/
+}
+.tooltips span{
+display: none;
+}
+.tooltips:hover span{ /*span 标签仅在 :hover 状态时显示*/
+display:block;
+position:relative;
+}
+</style>
+<div style="text-align:center;clear:both">
+</div>
+<div class="tooltips">
+<span>
+
+
+<iframe src="./001.mp3" width=330 height="300" frameborder="no" marginwidth="0" marginheight="0"></iframe>
+</span>
+</div>
 </head>
-
 <body>
+<div id="top">
+<main id="top_main">
+<div id="top_logo"><img src="./zhuye/htmlimg/tx.png" onmouseover="mouseOver()" onmouseout="mouseOut()" id="mainimg"></div>
+<div id="top_title"><img id="top_title01" alt=""" src="./htmlimg/toptitle01.png">
+<br class="top_hr_style01">
+<img id="top_title02" alt=""" src="./htmlimg/toptitle02.png">
+</div><br><br>s
+<div class="showcase-examples l-over l-center">
+  <a href="ulu" class="button button-rounded button-plain button-small-caps button-border">什么也没有</a>
+  <a href="ulu" class="button button-rounded button-plain button-small-caps button-border">什么也没有</a>
+  <a href="ulu" class="button button-rounded button-plain button-small-caps button-border">什么也没有</a>
+  <a href="ulu" class="button button-rounded button-plain button-small-caps button-border">什么也没有</a>
 
+  </div>
 
+</main>
+<script>
+	function mouseOver(){
+		document.getElementById("mainimg").src="./zhuye/htmlimg/tx2.png";//鼠标悬浮时的旋转图标
+	}
+	function mouseOut()
+	{
+		document.getElementById('mainimg').src ="./zhuye/htmlimg/tx.png"//默认的旋转图标
+	}
+</script>
+</div>
 
-
-    <div class="content">
-        <div class="post-info">
-            <h2>第1套</h2>
-           
-        </div>
-        <div class="post-tags color-tags">        
-<div id="masonry" class="post row">
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/01.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/01.png"
-         alt="1" title="1">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/02.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/02.png"
-         alt="2" title="2">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/03.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/03.png"
-         alt="3" title="3">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/04.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/04.png"
-         alt="4" title="4">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/05.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/05.png"
-         alt="5" title="5">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/06.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/06.png"
-         alt="6" title="6">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/07.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/07.png"
-         alt="7" title="7">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/08.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/08.png"
-         alt="8" title="8">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/09.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/09.png"
-         alt="9" title="9">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/10.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/10.png"
-         alt="10" title="10">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/11.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/11.png"
-         alt="11" title="11">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/12.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/12.png"
-         alt="12" title="12">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/13.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/13.png"
-         alt="13" title="13">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/14.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/14.png"
-         alt="14" title="14">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/15.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/15.png"
-         alt="15" title="15">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/16.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/16.png"
-         alt="16" title="16">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/17.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/17.png"
-         alt="17" title="17">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/18.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/18.png"
-         alt="18" title="18">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/19.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/19.png"
-         alt="19" title="19">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/20.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/20.png"
-         alt="20" title="20">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/21.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/21.png"
-         alt="21" title="21">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/22.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/22.png"
-         alt="22" title="22">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/23.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/23.png"
-         alt="23" title="23">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/24.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/24.png"
-         alt="24" title="24">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/25.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/25.png"
-         alt="25" title="25">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/26.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/26.png"
-         alt="26" title="26">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/27.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/27.png"
-         alt="27" title="27">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/28.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/28.png"
-         alt="28" title="28">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/29.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/29.png"
-         alt="29" title="29">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/30.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/30.png"
-         alt="30" title="30">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/31.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/31.png"
-         alt="31" title="31">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/32.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/32.png"
-         alt="32" title="32">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/33.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/33.png"
-         alt="33" title="33">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/34.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/34.png"
-         alt="34" title="34">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/35.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/35.png"
-         alt="35" title="35">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/36.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/36.png"
-         alt="36" title="36">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/37.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/37.png"
-         alt="37" title="37">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/38.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/38.png"
-         alt="38" title="38">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/39.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/39.png"
-         alt="39" title="39">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/40.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/40.png"
-         alt="40" title="40">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/41.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/41.png"
-         alt="41" title="41">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/42.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/42.png"
-         alt="42" title="42">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/43.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/43.png"
-         alt="43" title="43">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/44.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/44.png"
-         alt="44" title="44">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/45.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/45.png"
-         alt="45" title="45">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/46.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/46.png"
-         alt="46" title="46">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/47.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/47.png"
-         alt="47" title="47">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/48.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/48.png"
-         alt="48" title="48">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/49.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/49.png"
-         alt="49" title="49">
-</div>
-<div data-fancybox="gallery" class="post-item col-xs-12 col-sm-6 col-md-4 col-lg-3" data-src="http://110m.52msr.cn/picture/01/50.png">
-     <img class="post-item-img lazy" src="../01/usr/themes/photograph/src/001.gif" data-original="http://110m.52msr.cn/picture/01/50.png"
-         alt="50" title="50">
-</div>
- </div>
- </div>
-
-
-
->
-
-    <script type="text/javascript" src="../01/usr/themes/photograph/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../01/usr/themes/photograph/bootstrap3/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../01/usr/themes/photograph/js/jquery.lazyload.js"></script>
-    <script type="text/javascript" src="../01/usr/themes/photograph/js/masonry-docs.min.js"></script>
-    <script type="text/javascript" src="../01/usr/themes/photograph/js/shortcut.js"></script>
-    <script type="text/javascript" src="../01/usr/themes/photograph/js/qrcode.min.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/core.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/guestures.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/hash.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/media.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/wheel.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/slideshow.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/fullscreen.js"></script>
-    <script type="text/javascript" async src="../01/usr/themes/photograph/fancybox3/js/thumbs.js"></script>
-
-    <script type="text/javascript">
-        if (history.length < 2) {
-            $('.header-post-back').css('opacity', 0);
-        }
-    </script>
-    <script type="text/javascript">
-        $(function() {
-            //fancybox3
-            $('[data-fancybox="gallery"]').fancybox({
-                toolbar: true,
-                loop: false,
-                smallBtn: false,
-                buttons: [
-                    "slideShow", "fullScreen", "thumbs", "close"
-                ],
-                iframe: {
-                    preload: false
-                }
-            })
-        });
-        //lazyload
-        $(function() {
-            $("img.lazy").lazyload({
-                placeholder: "../01/usr/themes/photograph/src/001.gif",
-                effect: "fadeIn",
-                load: function(ele) {
-                    //masonry
-                    var $container = $('#masonry');
-                    $container.imagesLoaded(function() {
-                        $container.masonry({
-                            itemSelector: '.post-item',
-                            gutter: 0,
-                            isAnimated: false,
-                        });
-                    });
-                },
-            });
-        });
-        //showcomment
-        $(function() {
-            if (window.location.href.indexOf("#comment-") > -1) {
-                $("#post-comments").addClass("comment-open");
-            }
-            $("#ex-comment").click(function() {
-                $("#post-comments").toggleClass("comment-open");
-            });
-        });
-        //goToTop
-        $(function() {
-            $("#go-top").hide();
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 100) {
-                    $('#go-top').fadeIn();
-                } else {
-                    $('#go-top').fadeOut();
-                }
-            });
-            $('#go-top').click(function() {
-                $('html ,body').animate({
-                    scrollTop: 0
-                }, 300);
-                return false;
-            });
-        });
-        //goToBottom
-        $(function() {
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > (document.body.scrollHeight - 1000)) {
-                    $('#go-bottom').fadeOut();
-                } else {
-                    $('#go-bottom').fadeIn();
-                }
-            });
-            $('#go-bottom').click(function() {
-                $('html ,body').animate({
-                    scrollTop: document.body.scrollHeight
-                }, 300);
-                return false;
-            });
-        });
-
-        var cookieGet = function(key) { //获取cookie方法
-            /*获取cookie参数*/
-            var getCookie = document.cookie.replace(/[ ]/g, ""); //获取cookie，并且将获得的cookie格式化，去掉空格字符
-            var arrCookie = getCookie.split(";") //将获得的cookie以"分号"为标识 将cookie保存到arrCookie的数组中
-            var tips; //声明变量tips
-            for (var i = 0; i < arrCookie.length; i++) { //使用for循环查找cookie中的tips变量
-                var arr = arrCookie[i].split("="); //将单条cookie用"等号"为标识，将单条cookie保存为arr数组
-                if (key == arr[0]) { //匹配变量名称，其中arr[0]是指的cookie名称，如果该条变量为tips则执行判断语句中的赋值操作
-                    tips = arr[1]; //将cookie的值赋给变量tips
-                    break; //终止for循环遍历
-                }
-            }
-            return tips;
-        }
-
-       
-        //qrcode
-       
-    </script>
-
+</footer>
 </body>
 
+<script src="./zhuye/javascript/snow.js"></script>
+<script>
+createSnow('', 60);
+</script>
 </html>
